@@ -192,6 +192,7 @@ function classifier(input) {
       regNos: getReg6
     }
   };
+  return output;
 }
 
 module.exports = classifier;

@@ -2,7 +2,7 @@
   "name": "max-techpoint",
   "version": "1.0.0",
   "main": "src/classifier.js",
-  "author": "Bond <bond@max.ng>",
+  "author": "Arifayan Idowu",
   "license": "MIT",
   "private": true,
   "scripts": {
