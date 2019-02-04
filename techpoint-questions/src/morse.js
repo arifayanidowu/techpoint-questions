@@ -66,14 +66,14 @@ Object.freeze(MORSE_CODE);
 function decodeMorse(morseCode) {
   // Your code should go here.
   return morseCode
-    .split(" ")
+    .split("   ")
     .map(a =>
       a
         .split(" ")
         .map(b => MORSE_CODE[b.toUpperCase()])
         .join("")
     )
-    .join("");
+    .join(" ");
 }
 
 module.exports = decodeMorse;
