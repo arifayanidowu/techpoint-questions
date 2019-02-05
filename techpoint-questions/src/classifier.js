@@ -3,6 +3,9 @@
  *
  * @param {array} input Array of student objects
  */
+
+const input = require("./inputs/input");
+
 function classifier(input) {
   // Your code should go here.
   const chunk_arr = (arr, size) => {
@@ -27,66 +30,33 @@ function classifier(input) {
   let group5 = chunkedData[4];
   let group6 = chunkedData[5];
 
+  function groupedData(data) {
+    return data.map(arr => {
+      return {
+        name: arr.name,
+        dob: arr.dob,
+        regNo: arr.regNo,
+        age: new Date().getFullYear() - new Date(arr.dob).getFullYear()
+      };
+    });
+  }
+
   // Group 1
-  let getData1 = group1.map(arr => {
-    return {
-      name: arr.name,
-      dob: arr.dob,
-      regNo: arr.regNo,
-      age: new Date().getFullYear() - new Date(arr.dob).getFullYear()
-    };
-  });
+  let getData1 = groupedData(group1);
 
   // Group 2
-  let getData2 = group2.map(arr => {
-    return {
-      name: arr.name,
-      dob: arr.dob,
-      regNo: arr.regNo,
-      age: new Date().getFullYear() - new Date(arr.dob).getFullYear()
-    };
-  });
+  let getData2 = groupedData(group2);
 
   // Group 3
-  let getData3 = group3.map(arr => {
-    return {
-      name: arr.name,
-      dob: arr.dob,
-      regNo: arr.regNo,
-      age: new Date().getFullYear() - new Date(arr.dob).getFullYear()
-    };
-  });
-
+  let getData3 = groupedData(group3);
   // Group 4
-  let getData4 = group4.map(arr => {
-    return {
-      name: arr.name,
-      dob: arr.dob,
-      regNo: arr.regNo,
-      age: new Date().getFullYear() - new Date(arr.dob).getFullYear()
-    };
-  });
+  let getData4 = groupedData(group4);
 
   // Group 5
-  let getData5 = group5.map(arr => {
-    return {
-      name: arr.name,
-      dob: arr.dob,
-      regNo: arr.regNo,
-      age: new Date().getFullYear() - new Date(arr.dob).getFullYear()
-    };
-  });
+  let getData5 = groupedData(group5);
 
   // Group 6
-  let getData6 = group6.map(arr => {
-    return {
-      name: arr.name,
-      dob: arr.dob,
-      regNo: arr.regNo,
-      age: new Date().getFullYear() - new Date(arr.dob).getFullYear()
-    };
-  });
-
+  let getData6 = groupedData(group6);
   // Member data 1
   let getAge1 = getData1.map(arr => arr.age);
   let totalAge1 = getAge1.reduce((acc, cur) => acc + cur, 0);
