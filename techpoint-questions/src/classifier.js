@@ -4,8 +4,6 @@
  * @param {array} input Array of student objects
  */
 
-const input = require("./inputs/input");
-
 function classifier(input) {
   // Your code should go here.
   const chunk_arr = (arr, size) => {
